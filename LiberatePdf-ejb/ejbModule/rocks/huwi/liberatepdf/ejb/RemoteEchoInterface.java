@@ -1,4 +1,4 @@
-package de.debuglevel.liberatepdf.ejb;
+package rocks.huwi.liberatepdf.ejb;
 
 import javax.ejb.Remote;
 

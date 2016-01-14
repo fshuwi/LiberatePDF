@@ -1,4 +1,4 @@
-package de.debuglevel.liberatepdf.cli;
+package rocks.huwi.liberatepdf.cli;
 
 public class Cli {
 

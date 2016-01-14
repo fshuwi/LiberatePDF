@@ -1,4 +1,4 @@
-package de.debuglevel.liberatepdf.library;
+package rocks.huwi.liberatepdf.library;
 
 import java.io.BufferedReader;
 import java.io.File;

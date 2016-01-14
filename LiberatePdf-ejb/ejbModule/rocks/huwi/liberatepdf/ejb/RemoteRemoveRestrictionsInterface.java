@@ -1,4 +1,4 @@
-package de.debuglevel.liberatepdf.ejb;
+package rocks.huwi.liberatepdf.ejb;
 
 import java.io.File;
 
