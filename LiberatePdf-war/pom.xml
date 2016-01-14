@@ -25,4 +25,17 @@
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>rocks.huwi.liberatepdf</groupId>
+  		<artifactId>liberatepdf-ejb</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	  	<dependency>
+	    <groupId>javax.ejb</groupId>
+	    <artifactId>javax.ejb-api</artifactId>
+	    <version>3.2</version>
+    <scope>provided</scope>
+</dependency>
+  </dependencies>
 </project>

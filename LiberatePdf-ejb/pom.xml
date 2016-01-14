@@ -32,4 +32,11 @@
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>rocks.huwi.liberatepdf</groupId>
+  		<artifactId>liberatepdf-lib</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>
