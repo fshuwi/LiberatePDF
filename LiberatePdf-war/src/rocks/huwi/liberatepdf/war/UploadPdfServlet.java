@@ -1,4 +1,4 @@
-package de.debuglevel.liberatepdf.war;
+package rocks.huwi.liberatepdf.war;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import de.debuglevel.liberatepdf.ejb.RemoteRemoveRestrictionsInterface;
+import rocks.huwi.liberatepdf.ejb.RemoteRemoveRestrictionsInterface;
 
 @WebServlet("/UploadPdf")
 @MultipartConfig

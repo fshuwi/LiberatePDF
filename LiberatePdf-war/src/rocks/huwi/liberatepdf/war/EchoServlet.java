@@ -1,4 +1,4 @@
-package de.debuglevel.liberatepdf.war;
+package rocks.huwi.liberatepdf.war;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import de.debuglevel.liberatepdf.ejb.RemoteEchoInterface;
+import rocks.huwi.liberatepdf.ejb.RemoteEchoInterface;
 
 @WebServlet("/echo")
 public class EchoServlet extends javax.servlet.http.HttpServlet implements javax.servlet.Servlet {

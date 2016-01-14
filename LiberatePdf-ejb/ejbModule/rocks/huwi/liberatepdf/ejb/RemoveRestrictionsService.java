@@ -4,7 +4,7 @@ import java.io.File;
 
 import javax.ejb.Stateless;
 
-import de.debuglevel.liberatepdf.library.BatchProcessor;
+import rocks.huwi.liberatepdf.library.BatchProcessor;
 
 @Stateless
 public class RemoveRestrictionsService implements RemoteRemoveRestrictionsInterface {
