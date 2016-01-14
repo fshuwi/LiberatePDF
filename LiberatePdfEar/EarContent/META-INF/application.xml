@@ -10,4 +10,5 @@
   <module>
     <ejb>LiberatePdfEjb.jar</ejb>
   </module>
+  <library-directory>lib</library-directory>
 </application>
