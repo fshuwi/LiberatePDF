@@ -13,6 +13,15 @@
           <earSourceDirectory>EarContent</earSourceDirectory>
           <version>6</version>
           <defaultLibBundleDir>lib</defaultLibBundleDir>
+          
+           <modules>
+             <webModule>
+               <groupId>rocks.huwi.liberatepdf</groupId>
+               <artifactId>LiberatePdf-war</artifactId>
+               <contextRoot>/LiberatePDF</contextRoot>
+             </webModule>
+          </modules>
+          
         </configuration>
       </plugin>
     </plugins>

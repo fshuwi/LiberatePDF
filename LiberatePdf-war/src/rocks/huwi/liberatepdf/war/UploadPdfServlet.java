@@ -19,13 +19,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import rocks.huwi.liberatepdf.ejb.RemoteRemoveRestrictionsInterface;
+import rocks.huwi.liberatepdf.ejb.RemoveRestrictionsService;
 
 @WebServlet("/UploadPdf")
 @MultipartConfig
 public class UploadPdfServlet extends HttpServlet {
 	private static final long serialVersionUID = 2615577553835700429L;
+        private final Logger Logger = LoggerFactory.getLogger(UploadPdfServlet.class);
 
 	@EJB
 	RemoteRemoveRestrictionsInterface remoteRemoveRestrictionsInterface;
@@ -38,11 +42,13 @@ public class UploadPdfServlet extends HttpServlet {
 				.collect(Collectors.toList());
 		// Part filePart = request.getPart("pdfFile");
 
-		Path temporaryPath = Files.createTempDirectory("LiberatePDF");
+		Path temporaryPath = Files.createTempDirectory("LiberatePDF_incoming");
+                Logger.info("Created temporary directory \"{}\"", temporaryPath);
 
-		List<File> temporaryFiles = new ArrayList<File>();
+		List<File> temporaryFiles = new ArrayList<>();
 		for (Part filePart : fileParts) {
-			System.out.println(filePart.getSubmittedFileName() + " | " + filePart.getName());
+			Logger.info("Submitted filename: \"{}\"", filePart.getSubmittedFileName());
+                        Logger.info("Name: \"{}\"", filePart.getName());
 
 			String fileName = filePart.getSubmittedFileName();
 			File temporaryFile = new File(temporaryPath.toFile(), fileName);
@@ -63,10 +69,15 @@ public class UploadPdfServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// String filename = URLDecoder.decode(fileName, "UTF-8");
 		// File file = new File("/path/to/files", filename);
-
+                Logger.info("Serve file");
+                
 		response.setHeader("Content-Type", this.getServletContext().getMimeType(file.getAbsolutePath()));
 		response.setHeader("Content-Length", String.valueOf(file.length()));
 		response.setHeader("Content-Disposition", "inline; filename=\"" + file.getName() + "\"");
+                
+                Logger.info("Content-Type: {}", this.getServletContext().getMimeType(file.getAbsolutePath()));
+		Logger.info("Content-Length: {}", String.valueOf(file.length()));
+		Logger.info("Content-Disposition: {}", "inline; filename=\"" + file.getName() + "\"");
 
 		Files.copy(file.toPath(), response.getOutputStream());
 	}
